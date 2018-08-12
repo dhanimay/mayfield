@@ -1,10 +1,248 @@
-@import ../node_modules/bootstrap/dist/css/bootstrap
-@import ../node_modules/bootstrap/scss/bootstrap.scss
-// @import ../node_modules/font-awesome/scss/font-awesome.scss
-
+// @import font-awesome/css/font-awesome.css
 @import vars
 @import mixins
-   
+
 html, body
   width: 100%
   height: 100%
+
+#app
+  width: 100%
+  height: 100%
+
+main
+  height: 100%
+  width: 100%
+
+.login-view
+  @extend .flex-cc
+  flex-direction: column
+  background-color: rgb(240, 240 , 240)
+  width: 100%
+  height: 100%
+
+  h1
+    color: #111
+    text-shadow: 0 0 1px white
+  .panel
+    box-shadow: 0 0 1px black
+    border: 1px solid rgba(black, .25)
+    background-color: #efccae
+    border-radius: 3px
+    padding: 2rem
+    .row
+      margin: 0
+      align-items: center
+      &:first-of-type
+        margin-bottom: 1rem
+    label
+      padding: 0
+      padding-right: 10px
+      margin: 0
+    .submit
+      margin: 1rem auto 0
+      color: $blue
+      background-color: white
+      border-radius: 3px
+      border: 1px solid rgba(black, .25)
+      cursor: pointer
+      transition: all .3s
+      font-weight: bold
+      width: 100px
+      display: block
+      &:hover
+        box-shadow: 0 0 2px #ddd
+        background-color: $blue
+        color: white
+    .username, .password
+      background-color: rgb(240, 240, 240)
+      border: 1px solid rgba(black, .25)
+      border-radius: 3px
+      outline: none
+      transition: all .3s
+      &:focus
+        border: 1px solid $blue
+        box-shadow: 0 0 3px $blue
+
+.dashboard-view
+  padding: 2rem
+
+  .greeting
+    font: 24px arial
+
+  .accounts
+    border: 1px solid rgba(black, .4)
+    border-radius: 3px
+    box-shadow: 1px 1px 2px #ddd
+    max-width: 500px
+    min-width: 300px
+    width: 100%
+    min-height: 200px
+    display: flex
+    flex-direction: column
+    > h3
+      background-color: $lavendar
+      margin: 0
+      padding: 1rem
+      color: white
+      font-family: arial
+      text-shadow: 0 0 1px black
+
+    .content
+      flex: 1
+      width: 100%
+      height: 100%
+      background-color: darken(white, 5%)
+      &.loading
+        @extend .flex-cc
+        ul
+          width: 0
+          padding: 0
+      ul
+        padding: 0 40px
+  .service-title
+    font: 20px Arial
+    border-bottom: 1px dotted rgba(black, .25)
+    transition: all .3s
+    display: inline-block
+    margin: 0
+    cursor: pointer
+    text-transform: capitalize
+    text-decoration: none
+    color: black
+    &:link, &:active, &:visited
+      color: black
+    &:hover
+      border-bottom: 1px dotted rgba(black, .5)
+
+  .service-item
+    $green: #88af4a
+    $red: #dc614e
+    p
+      width: 100%
+    .amount
+      float: right
+    .arrow
+      color: white
+      text-shadow: 0 0 1px black
+      font-weight: bold
+      font-size: 20px
+      transition: all .3s
+      display: inline-block
+      margin-right: 10px
+      background-color: $green
+      width: 1rem
+      height: 1rem
+      padding: 2px
+      text-align: center
+      border-radius: 50%
+      &:before
+        content: '+'
+    .investment-item
+      user-select: none
+      .toggle
+        cursor: pointer
+        padding: 4px 1rem
+        transition: all .3s
+        text-decoration: underline transparent
+      &.expanded
+        .toggle
+          text-decoration: underline $green
+        .arrow
+          margin-right: 15px
+          background-color: $red
+          font-size: 17px
+          &:before
+            content: '-'
+        .investment-details
+          max-height: initial
+          padding: 1rem
+          box-shadow: 0 0 1px black
+      &:hover
+        .arrow
+        .toggle
+          text-decoration: underline green
+          background-color: rgba(blue, .05)
+          box-shadow: 0 0 1px black
+          border-radius: 3px
+      &:active
+        .toggle
+          background-color: rgba(blue, .1)
+      &:last-of-type
+        margin-bottom: 1rem
+
+    .investment-details
+      max-height: 0
+      margin: 0
+      margin-left: 1rem
+      border: 0
+      box-sizing: border-box
+      overflow: hidden
+      transition: all .3s
+      padding: 0
+      background-color: rgba(orange, .15)
+      p
+        margin: 0
+        span:first-of-type
+          width: 60%
+          display: inline-block
+        span:last-of-type
+          width: 40%
+          display: inline-block
+          text-align: right
+      p:nth-of-type(2n + 1)
+        margin-bottom: 1rem
+
+  .total
+    margin: 0 2rem
+    border-top: 1px solid rgba(black, .5)
+    label, span
+      font: 20px arial, san-serif
+    span
+      float: right
+
+.spinner
+  border: 1px solid rgba(blue, .3)
+  box-shadow: 0 0 1px blue
+  width: 20px
+  height: 20px
+  border-radius: 50%
+  margin: 0 auto
+  > div
+    width: 50%
+    height: 50%
+    border-radius: 50% 50% 0 50%
+    background-color: white
+    transform-origin: 100% 100%
+    animation: spin 1.25s infinite
+    animation-delay: 0s
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+
+  to
+    transform: rotate(360deg)
+
+.description-modal
+  $background-color: #fdfdf1
+  border: 1px solid rgba(black, .3)
+  border-radius: 0 3px 3px
+  box-shadow: 0 0 1px rgba(black, .3)
+  background-color: $background-color
+  position: absolute
+  padding: 1rem
+  font: 12px arial
+  width: 200px
+  .point, .point-shadow
+    position: absolute
+    top: 0px
+    left: -13px
+    border: 7px solid $background-color
+    border-left-color: transparent
+    border-bottom-color: transparent
+  .point-shadow
+    left: -15px
+    top: -1px
+    border-top-color: rgba(black, .3)
+    border-right-color: rgba(black, .3)

@@ -22,6 +22,6 @@ let directory = path.join(__dirname, '../src/components')
 fs.writeFile(`${directory}/${process.argv[2]}.vue`,
   template, 'utf-8', (err) => {
     if(err) throw err
-    console.log('File successfully created!')
+    process.stdout.write('File successfully created!')
     process.exit(0)
 })

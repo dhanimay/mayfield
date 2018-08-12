@@ -1,14 +1,14 @@
-const Coinbase = require('services/coinbase')
+import Coinbase from 'services/coinbase'
 
-module.exports = {
-
-	getAccounts: (req, res, next) => {
+export default {
+	coinbase: (req, res, next) => {
 		Coinbase.getAccounts({}, (err, accounts) => {
-			if (err) console.log(err)
-			req.accounts = accounts
+			if (err) console.error(err)
+			if (!res.locals.accounts) res.locals.accounts = {}
+			res.locals.accounts.coinbase = accounts
+			res.locals.currencies = accounts.map(account => account.currency)
 			next()
 		})
-		  
 	}
 
 }

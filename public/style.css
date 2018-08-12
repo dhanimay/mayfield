@@ -1,0 +1,230 @@
+.flex-cc, .login-view, .dashboard-view .accounts .content.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+#app {
+  width: 100%;
+  height: 100%; }
+
+main {
+  height: 100%;
+  width: 100%; }
+
+.login-view {
+  flex-direction: column;
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 100%; }
+  .login-view h1 {
+    color: #111;
+    text-shadow: 0 0 1px white; }
+  .login-view .panel {
+    box-shadow: 0 0 1px black;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background-color: #efccae;
+    border-radius: 3px;
+    padding: 2rem; }
+    .login-view .panel .row {
+      margin: 0;
+      align-items: center; }
+      .login-view .panel .row:first-of-type {
+        margin-bottom: 1rem; }
+    .login-view .panel label {
+      padding: 0;
+      padding-right: 10px;
+      margin: 0; }
+    .login-view .panel .submit {
+      margin: 1rem auto 0;
+      color: #7272ff;
+      background-color: white;
+      border-radius: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      transition: all .3s;
+      font-weight: bold;
+      width: 100px;
+      display: block; }
+      .login-view .panel .submit:hover {
+        box-shadow: 0 0 2px #ddd;
+        background-color: #7272ff;
+        color: white; }
+    .login-view .panel .username, .login-view .panel .password {
+      background-color: #f0f0f0;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      border-radius: 3px;
+      outline: none;
+      transition: all .3s; }
+      .login-view .panel .username:focus, .login-view .panel .password:focus {
+        border: 1px solid #7272ff;
+        box-shadow: 0 0 3px #7272ff; }
+
+.dashboard-view {
+  padding: 2rem; }
+  .dashboard-view .greeting {
+    font: 24px arial; }
+  .dashboard-view .accounts {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px #ddd;
+    max-width: 500px;
+    min-width: 300px;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column; }
+    .dashboard-view .accounts > h3 {
+      background-color: #5f78b1;
+      margin: 0;
+      padding: 1rem;
+      color: white;
+      font-family: arial;
+      text-shadow: 0 0 1px black; }
+    .dashboard-view .accounts .content {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      background-color: #f2f2f2; }
+      .dashboard-view .accounts .content.loading ul {
+        width: 0;
+        padding: 0; }
+      .dashboard-view .accounts .content ul {
+        padding: 0 40px; }
+  .dashboard-view .service-title {
+    font: 20px Arial;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.25);
+    transition: all .3s;
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: black; }
+    .dashboard-view .service-title:link, .dashboard-view .service-title:active, .dashboard-view .service-title:visited {
+      color: black; }
+    .dashboard-view .service-title:hover {
+      border-bottom: 1px dotted rgba(0, 0, 0, 0.5); }
+  .dashboard-view .service-item p {
+    width: 100%; }
+  .dashboard-view .service-item .amount {
+    float: right; }
+  .dashboard-view .service-item .arrow {
+    color: white;
+    text-shadow: 0 0 1px black;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all .3s;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #88af4a;
+    width: 1rem;
+    height: 1rem;
+    padding: 2px;
+    text-align: center;
+    border-radius: 50%; }
+    .dashboard-view .service-item .arrow:before {
+      content: '+'; }
+  .dashboard-view .service-item .investment-item {
+    user-select: none; }
+    .dashboard-view .service-item .investment-item .toggle {
+      cursor: pointer;
+      padding: 4px 1rem;
+      transition: all .3s;
+      text-decoration: underline transparent; }
+    .dashboard-view .service-item .investment-item.expanded .toggle {
+      text-decoration: underline #88af4a; }
+    .dashboard-view .service-item .investment-item.expanded .arrow {
+      margin-right: 15px;
+      background-color: #dc614e;
+      font-size: 17px; }
+      .dashboard-view .service-item .investment-item.expanded .arrow:before {
+        content: '-'; }
+    .dashboard-view .service-item .investment-item.expanded .investment-details {
+      max-height: initial;
+      padding: 1rem;
+      box-shadow: 0 0 1px black; }
+    .dashboard-view .service-item .investment-item:hover .toggle {
+      text-decoration: underline green;
+      background-color: rgba(0, 0, 255, 0.05);
+      box-shadow: 0 0 1px black;
+      border-radius: 3px; }
+    .dashboard-view .service-item .investment-item:active .toggle {
+      background-color: rgba(0, 0, 255, 0.1); }
+    .dashboard-view .service-item .investment-item:last-of-type {
+      margin-bottom: 1rem; }
+  .dashboard-view .service-item .investment-details {
+    max-height: 0;
+    margin: 0;
+    margin-left: 1rem;
+    border: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all .3s;
+    padding: 0;
+    background-color: rgba(255, 165, 0, 0.15); }
+    .dashboard-view .service-item .investment-details p {
+      margin: 0; }
+      .dashboard-view .service-item .investment-details p span:first-of-type {
+        width: 60%;
+        display: inline-block; }
+      .dashboard-view .service-item .investment-details p span:last-of-type {
+        width: 40%;
+        display: inline-block;
+        text-align: right; }
+    .dashboard-view .service-item .investment-details p:nth-of-type(2n + 1) {
+      margin-bottom: 1rem; }
+  .dashboard-view .total {
+    margin: 0 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.5); }
+    .dashboard-view .total label, .dashboard-view .total span {
+      font: 20px arial, san-serif; }
+    .dashboard-view .total span {
+      float: right; }
+
+.spinner {
+  border: 1px solid rgba(0, 0, 255, 0.3);
+  box-shadow: 0 0 1px blue;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 auto; }
+  .spinner > div {
+    width: 50%;
+    height: 50%;
+    border-radius: 50% 50% 0 50%;
+    background-color: white;
+    transform-origin: 100% 100%;
+    animation: spin 1.25s infinite;
+    animation-delay: 0s; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.description-modal {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0 3px 3px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  background-color: #fdfdf1;
+  position: absolute;
+  padding: 1rem;
+  font: 12px arial;
+  width: 200px; }
+  .description-modal .point, .description-modal .point-shadow {
+    position: absolute;
+    top: 0px;
+    left: -13px;
+    border: 7px solid #fdfdf1;
+    border-left-color: transparent;
+    border-bottom-color: transparent; }
+  .description-modal .point-shadow {
+    left: -15px;
+    top: -1px;
+    border-top-color: rgba(0, 0, 0, 0.3);
+    border-right-color: rgba(0, 0, 0, 0.3); }

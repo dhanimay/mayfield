@@ -4,10 +4,11 @@ module.exports.create = async (user) => {
   const { rows } = await db.query(`
     insert into
       users
-    (id, first_name, last_name, email) 
+    (id, first_name, last_name, email)
       values
     ($1, $2, $3, $4)
   `, [user.id, user.first_name, user.last_name, user.email])
+  if (!rows) throw new Error('No user found')
   return rows
 }
 

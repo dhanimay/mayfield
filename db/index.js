@@ -13,6 +13,6 @@ const pool = new Pool(connection)
 
 client.connect()
 
-module.exports.query = function (text, params) { 
-  return client.query(text, params) 
+module.exports.query = function (text, params) {
+  return client.query(text, params)
 }
